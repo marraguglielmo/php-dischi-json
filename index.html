@@ -17,6 +17,7 @@
     <!-- fontawesome -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css' integrity='sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==' crossorigin='anonymous'/>
 
+    <link rel="icon" href="img//icons8-spotify-48.png">
     <link rel="stylesheet" href="css/style.css">
     <title>PHP Dischi JSON</title>
 </head>
@@ -37,9 +38,10 @@
                 <div class="row row-cols-3">
                     <!-- col -->
                     <div
-                        v-for="(card, index) in listaDischi"
-                        :key="index"
+                        v-for="(card, cardId) in listaDischi"
+                        :key="cardId"
                         class="col"
+                        @click="activeId = cardId; getInfoCard()"
                     >
                         <div class="gm_card text-center">
                             <div class="card-img">
@@ -57,6 +59,22 @@
                         </div>
                     </div>
                     <!-- /col -->
+
+                    <!-- info card -->
+                    <div v-if="showInfo" class="info">
+                        <div class="container">
+                            <div class="row">
+                                <div
+                                    v-for="(infoCard, infoCardId) in listaDischi[activeId]"
+                                    class="col"
+                                >
+                                    <div class="title">{{infoCard.title}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    
                 </div>
             </div>
 

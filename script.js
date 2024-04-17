@@ -5,7 +5,9 @@ createApp({
     data(){
         return{
             apiUrl: 'server.php',
-            listaDischi : []
+            listaDischi : [],
+            activeId : 0,
+            showInfo: false
         }
     },
 
@@ -16,6 +18,13 @@ createApp({
                 this.listaDischi = res.data;
                 console.log(this.listaDischi);
             })
+        },
+
+        getInfoCard(){
+            this.showInfo = true;
+            // salvo in selectedDisc il disco attivo
+            const selectedDisc = this.listaDischi[this.activeId]
+            console.log(selectedDisc);
         }
     },
 

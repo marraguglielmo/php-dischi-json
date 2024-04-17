@@ -76,4 +76,19 @@ main{
             }
         }
     }
+    .info{
+        background-color: var(--primary-blue);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+        border: 2px solid red;
+        width: 50vw;
+        height: 45vh;
+        color: whitesmoke;
+        .container{
+            border: 1px solid green;
+        }
+    }
 }
