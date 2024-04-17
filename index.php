@@ -19,6 +19,11 @@
 
 <body>
 
+    <div id="app">
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
