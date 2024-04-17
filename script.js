@@ -25,6 +25,10 @@ createApp({
             // salvo in selectedDisc il disco attivo
             const selectedDisc = this.listaDischi[this.activeId]
             console.log(selectedDisc);
+        },
+
+        closeInfoCard(){
+            this.showInfo = false;
         }
     },
 
