@@ -5,6 +5,7 @@ createApp({
     data(){
         return{
             apiUrl: 'server.php',
+            listaDischi : []
         }
     },
 
@@ -12,7 +13,8 @@ createApp({
         getApi(){
             axios.get(this.apiUrl)
             .then(res =>{
-                console.log(res.data);
+                this.listaDischi = res.data;
+                console.log(this.listaDischi);
             })
         }
     },
