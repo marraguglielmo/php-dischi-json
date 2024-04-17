@@ -39,19 +39,19 @@
                     <div
                         v-for="(card, index) in listaDischi"
                         :key="index"
-                        class="col p-5"
+                        class="col"
                     >
                         <div class="gm_card text-center">
                             <div class="card-img">
                                 <img :src="card.poster" alt="">
                             </div>
-                            <div class="card-title my-3">
+                            <div class="card-title mt-3 mb-1">
                                 <h4>{{ card.title }}</h4>
                             </div>
-                            <div class="card-author my-3">
+                            <div class="card-author">
                                 <h5>{{ card.author }}</h5>
                             </div>
-                            <div class="card-year my-3">
+                            <div class="card-year">
                                 <h6>{{ card.year }}</h6>
                             </div>
                         </div>

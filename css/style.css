@@ -1,6 +1,7 @@
 :root{
     --bg: #1D2D3C;
-    --primary-blue: #CEC075;
+    --primary-blue: #112030;
+    --color-logo: #18D860;
 }
 
 *{
@@ -10,42 +11,67 @@
 }
 
 img{
-    width: 60%;
+    width: 80%;
     max-width: 100%;
 }
 
 body{
-    background: linear-gradient(to right, #efefbb, #d4d3dd) !important;
-    height: calc(100vh - 80px);
+    background: var(--bg);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 80px;
+    padding-top: 20px;
+}
+
+h4{
+    font-weight: bold;
+}
+h5{
+    font-size: 1rem;
+}
+h6{
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 
 header{
+    background-color: var(--primary-blue);
     min-height: 80px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
     display: flex;
     align-items: center;
+    padding: 15px 0;
     .container{
         display: flex;
         align-items: center;
-        border: 1px solid black;
     }
     .logo{
         width: fit-content;
-        border: 1px solid black;
         i{
             font-size: 3.5rem;
+            color: var(--color-logo);
         }
     }
 }
 
 main{
     .container{
-        border: 1px solid black;
         .row{
             .col{
-                border: 1px solid red;
+                padding: 10px 50px;
+                margin-bottom: 15px;
                 .gm_card{
                     background-color: var(--primary-blue);
-                    border: 1px solid green;
+                    padding: 25px;
+                    color: whitesmoke;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    &:hover{
+                        box-shadow: 0px 18px 19px -8px rgb(27, 27, 32);
+                        transition: box-shadow .3s;
+                    }
                 }
             }
         }
