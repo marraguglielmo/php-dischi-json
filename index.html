@@ -45,7 +45,7 @@
                     >
                         <div class="gm_card text-center">
                             <div class="card-img">
-                                <img :src="card.poster" alt="">
+                                <img :src="card.poster" :alt="card.title">
                             </div>
                             <div class="card-title mt-3 mb-1">
                                 <h4>{{ card.title }}</h4>
@@ -61,14 +61,30 @@
                     <!-- /col -->
 
                     <!-- info card -->
-                    <div v-if="showInfo" class="info">
-                        <div class="container">
-                            <div class="row">
-                                <div
-                                    v-for="(infoCard, infoCardId) in listaDischi[activeId]"
-                                    class="col"
-                                >
-                                    <div class="title">{{infoCard.title}}</div>
+                    <div
+                        v-if="showInfo"
+                        class="info"
+                    >
+                        <div class="container h-100">
+                            <div class="row row-cols-2 h-100">
+                                <div class="col text-center">
+                                    <div class="poster">
+                                        <img :src="listaDischi[activeId].poster" :alt="listaDischi[activeId].title">
+                                    </div>
+                                </div>
+                                <div class="col text-center">
+                                    <div class="title">
+                                        <div>Title</div>
+                                        {{listaDischi[activeId].title}}
+                                    </div>
+                                    <div class="author">
+                                        <div>Author</div>
+                                        {{listaDischi[activeId].author}}
+                                    </div>
+                                    <div class="year">
+                                        <div>Year</div>
+                                        {{listaDischi[activeId].year}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
