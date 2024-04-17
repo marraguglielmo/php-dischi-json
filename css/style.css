@@ -1,0 +1,53 @@
+:root{
+    --bg: #1D2D3C;
+    --primary-blue: #CEC075;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 60%;
+    max-width: 100%;
+}
+
+body{
+    background: linear-gradient(to right, #efefbb, #d4d3dd) !important;
+    height: calc(100vh - 80px);
+}
+
+header{
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    .container{
+        display: flex;
+        align-items: center;
+        border: 1px solid black;
+    }
+    .logo{
+        width: fit-content;
+        border: 1px solid black;
+        i{
+            font-size: 3.5rem;
+        }
+    }
+}
+
+main{
+    .container{
+        border: 1px solid black;
+        .row{
+            .col{
+                border: 1px solid red;
+                .gm_card{
+                    background-color: var(--primary-blue);
+                    border: 1px solid green;
+                }
+            }
+        }
+    }
+}
