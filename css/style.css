@@ -62,7 +62,6 @@ main{
         width: 100vw;
         height: 120vh;
         filter:opacity(.8);
-        /* opacity: .5; */
         background-color: var(--bg);
         position: absolute;
         top: 0;
