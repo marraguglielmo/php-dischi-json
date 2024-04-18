@@ -35,6 +35,12 @@ createApp({
             data.append('newDiscYear', this.newDisc.year)
             data.append('newDiscPoster', this.newDisc.poster)
 
+            // resetto i campi
+            this.newDisc.title = '';
+            this.newDisc.author = '';
+            this.newDisc.year = '';
+            this.newDisc.poster = '';
+
             axios.post(this.apiUrl, data)
             .then(res =>{
                 // agiorno la lista
@@ -43,8 +49,13 @@ createApp({
         },
 
         removeDisc(index){
-            // const data = new FormData();
-            // data.append('deleteDisc')
+            const data = new FormData();
+            data.append('indexToRemove', index);
+            axios.post(this.apiUrl, data)
+            .then(res =>{
+                // agiorno la lista
+                this.listaDischi = res.data;
+            })
             console.log(index);
         },
 

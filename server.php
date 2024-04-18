@@ -32,8 +32,16 @@ if (isset($_POST['newDiscTitle']) && strlen($_POST['newDiscTitle']) > 0) {
         $new_disc['year'] = $_POST['newDiscYear'];
     }
 
-    $list[] = $new_disc;
+    // faccio l'unshift del nuovo disco
+    array_unshift($list, $new_disc);
 
+    // salvo la nuova lista trasformata in stringa
+    file_put_contents('dischi.json', json_encode($list));
+}
+
+if (isset($_POST['indexToRemove'])) {
+    $indexToRemove = $_POST['indexToRemove'];
+    array_splice($list, $indexToRemove, 1);
     // salvo la nuova lista trasformata in stringa
     file_put_contents('dischi.json', json_encode($list));
 }
