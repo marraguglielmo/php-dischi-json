@@ -7,7 +7,13 @@ createApp({
             apiUrl: 'server.php',
             listaDischi : [],
             activeId : 0,
-            showInfo: false
+            showInfo: false,
+            newDisc:{
+                title: '',
+                author: '',
+                year: '',
+                poster: ''
+            },
         }
     },
 
@@ -16,7 +22,22 @@ createApp({
             axios.get(this.apiUrl)
             .then(res =>{
                 this.listaDischi = res.data;
-                console.log(this.listaDischi);
+            })
+        },
+
+        addNewDisc(){
+            // effettuo la chiamata axios
+            // per inviarlo a PHP lo maschero con formData (come se fosse un form)
+            const data = new FormData();
+            // faccio l'append delle variabili che mando in POST
+            data.append('newDiscTitle', this.newDisc.title)
+            data.append('newDiscAuthor', this.newDisc.author)
+            data.append('newDiscYear', this.newDisc.year)
+            data.append('newDiscPoster', this.newDisc.poster)
+
+            axios.post(this.apiUrl, data)
+            .then(result =>{
+                console.log(result.data);
             })
         },
 

@@ -5,7 +5,7 @@ $json_string = file_get_contents('dischi.json');
 // var_dump($json_string);
 
 // converto la stringa in un alemento PHP
-$list = json_decode($json_string);
+$list = json_decode($json_string, true);
 // var_dump($list);
 
 // converto il file PHP in json
