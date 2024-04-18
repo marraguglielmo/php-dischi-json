@@ -36,8 +36,9 @@ createApp({
             data.append('newDiscPoster', this.newDisc.poster)
 
             axios.post(this.apiUrl, data)
-            .then(result =>{
-                console.log(result.data);
+            .then(res =>{
+                // agiorno la lista
+                this.listaDischi = res.data;
             })
         },
 
