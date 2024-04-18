@@ -27,15 +27,50 @@
 
     <div id="app">
         <header>
-            <div class="container">
+            <div class="container d-flex align-items-center ">
                 <div class="logo">
                     <i class="fa-brands fa-spotify"></i>
+                </div>
+                <div class="ms-4">
+                    <h1 class="m-0">La mia playlist</h1>
                 </div>
             </div>
         </header>
         <main class="position-relative">
             <div @click="closeInfoCard()" v-if="showInfo" class="blur"></div>
 
+            <!-- add disc -->
+            <div class="container add-disc mb-5 text-white">
+                <div class="row row-cols-2">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="nameDisc">Nome disco</label>
+                            <input name="discName" type="text" class="form-control" id="nameDisc">
+                        </div>
+                        <div>
+                            <label for="nameAuthor">Nome autore</label>
+                            <input name="nameAuthor" type="text" class="form-control" id="nameAuthor">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="year">Anno</label>
+                            <input name="year" type="text" class="form-control" id="year">
+                        </div>
+                        <div>
+                            <label for="poster">Poster</label>
+                            <input name="poster" type="text" class="form-control" id="poster">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button
+                            class="btn w-25"
+                        >Aggiungi</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- disc list -->
             <div class="container">
                 <div class="row row-cols-3">
                     <!-- col -->

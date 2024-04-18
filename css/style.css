@@ -52,6 +52,7 @@ header {
 header .container {
     display: flex;
     align-items: center;
+    color: white;
 }
 
 header .logo {
@@ -142,4 +143,12 @@ main .info .container .row .col .year div {
 
 main .info .container img {
     width: 100%;
+}
+
+main .add-disc button{
+    background-color: var(--color-logo);
+    color: whitesmoke;
+}
+main .add-disc button:hover{
+    background-color: var(--primary-blue);
 }
