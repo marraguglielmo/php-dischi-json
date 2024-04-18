@@ -18,7 +18,8 @@ if (isset($_POST['newDiscTitle']) && strlen($_POST['newDiscTitle']) > 0) {
         'title' => $_POST['newDiscTitle'],
         'author' => $_POST['newDiscAuthor'],
         'year' => $_POST['newDiscYear'],
-        'poster' => $_POST['newDiscPoster']
+        'poster' => $_POST['newDiscPoster'],
+        'isFavourite' => $_POST['newDiscFavourite']
     ];
 
     // controllo se viene inserito l'autore
@@ -42,6 +43,14 @@ if (isset($_POST['newDiscTitle']) && strlen($_POST['newDiscTitle']) > 0) {
 if (isset($_POST['indexToRemove'])) {
     $indexToRemove = $_POST['indexToRemove'];
     array_splice($list, $indexToRemove, 1);
+    // salvo la nuova lista trasformata in stringa
+    file_put_contents('dischi.json', json_encode($list));
+}
+
+if (isset($_POST['isFavourite'])) {
+    $indexFavourite = $_POST['isFavourite'];
+
+    $list[$indexFavourite]['isFavourite'] = !$list[$indexFavourite]['isFavourite'];
     // salvo la nuova lista trasformata in stringa
     file_put_contents('dischi.json', json_encode($list));
 }

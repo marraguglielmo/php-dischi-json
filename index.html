@@ -123,12 +123,17 @@
                             <!-- icons -->
                             <div class="icons">
                                 <div class="like">
-                                    <button class="btn text-white">
+                                    <button
+                                        @click.stop="toggleFavourite(cardId)"
+                                        class="btn text-white"
+                                        :class="{'isLike': newDisc.isFavourite}"
+                                        type="button"
+                                    >
                                         <i class="fa-solid fa-heart"></i>
                                     </button>
                                 </div>
                                 <div class="trash text-end">
-                                    <button @click.stop="removeDisc(cardId)" class="btn text-white">
+                                    <button @click.stop="removeDisc(cardId)" class="btn text-white" type="button">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
                                 </div>

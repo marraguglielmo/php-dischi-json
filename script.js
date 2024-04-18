@@ -12,7 +12,8 @@ createApp({
                 title: '',
                 author: '',
                 year: '',
-                poster: ''
+                poster: '',
+                isFavourite: false
             },
         }
     },
@@ -34,6 +35,7 @@ createApp({
             data.append('newDiscAuthor', this.newDisc.author)
             data.append('newDiscYear', this.newDisc.year)
             data.append('newDiscPoster', this.newDisc.poster)
+            data.append('newDiscFavourite', this.newDisc.isFavourite)
 
             // resetto i campi
             this.newDisc.title = '';
@@ -55,6 +57,18 @@ createApp({
             .then(res =>{
                 // agiorno la lista
                 this.listaDischi = res.data;
+            })
+            console.log(index);
+        },
+
+        toggleFavourite(index){
+            const data = new FormData();
+            data.append('isFavourite', index);
+            axios.post(this.apiUrl, data)
+            .then(res =>{
+                // agiorno la lista
+                this.listaDischi = res.data;
+                console.log(res.data);
             })
             console.log(index);
         },
