@@ -94,6 +94,12 @@ main .container .row .col .gm_card {
 
 main .container .row .col .gm_card .trash{
     position: absolute;
+    top: 35px;
+    right: 7px;
+}
+
+main .container .row .col .gm_card .like{
+    position: absolute;
     top: 5px;
     right: 7px;
 }

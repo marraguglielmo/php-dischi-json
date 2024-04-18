@@ -27,7 +27,7 @@ if (isset($_POST['newDiscTitle']) && strlen($_POST['newDiscTitle']) > 0) {
         $new_disc['author'] = $_POST['newDiscAuthor'];
     }
     // controllo se viene inserito l'anno
-    if (strlen($_POST['newDiscYear']) < 4) {
+    if (strlen($_POST['newDiscYear']) < 4 || strlen($_POST['newDiscYear']) > 4) {
         $_POST['newDiscYear'] = 'Anno sconosciuto';
         $new_disc['year'] = $_POST['newDiscYear'];
     }
