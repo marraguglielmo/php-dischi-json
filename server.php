@@ -13,14 +13,24 @@ $list = json_decode($json_string, true);
 // se esiste aggiungo un disco alla lista
 // aggiorno dischi.json
 
-if (isset($_POST['newDiscTitle'])) {
+if (isset($_POST['newDiscTitle']) && strlen($_POST['newDiscTitle']) > 0) {
     $new_disc = [
         'title' => $_POST['newDiscTitle'],
         'author' => $_POST['newDiscAuthor'],
         'year' => $_POST['newDiscYear'],
         'poster' => $_POST['newDiscPoster']
-
     ];
+
+    // controllo se viene inserito l'autore
+    if (strlen($_POST['newDiscAuthor']) === 0) {
+        $_POST['newDiscAuthor'] = 'Autore sconosciuto';
+        $new_disc['author'] = $_POST['newDiscAuthor'];
+    }
+    // controllo se viene inserito l'anno
+    if (strlen($_POST['newDiscYear']) < 4) {
+        $_POST['newDiscYear'] = 'Anno sconosciuto';
+        $new_disc['year'] = $_POST['newDiscYear'];
+    }
 
     $list[] = $new_disc;
 

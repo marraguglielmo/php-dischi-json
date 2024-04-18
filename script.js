@@ -42,6 +42,12 @@ createApp({
             })
         },
 
+        removeDisc(index){
+            // const data = new FormData();
+            // data.append('deleteDisc')
+            console.log(index);
+        },
+
         getInfoCard(){
             this.showInfo = true;
             // salvo in selectedDisc il disco attivo

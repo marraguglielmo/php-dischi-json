@@ -41,6 +41,11 @@
 
             <!-- add disc -->
             <div class="container add-disc mb-5 text-white">
+                <div class="row">
+                    <div class="col mb-0 text-center">
+                        <h2>Aggiungi un disco</h2>
+                    </div>
+                </div>
                 <div class="row row-cols-2">
                     <div class="col">
                         <div class="mb-3">
@@ -100,9 +105,9 @@
                         v-for="(card, cardId) in listaDischi"
                         :key="cardId"
                         class="col"
-                        @click="activeId = cardId; getInfoCard()"
+                        @click.stop="activeId = cardId; getInfoCard()"
                     >
-                        <div class="gm_card text-center">
+                        <div class="gm_card text-center position-relative">
                             <div class="card-img">
                                 <img :src="card.poster" :alt="card.title">
                             </div>
@@ -114,6 +119,11 @@
                             </div>
                             <div class="card-year">
                                 <h6>{{ card.year }}</h6>
+                            </div>
+                            <div class="trash text-end">
+                                <button @click.stop="removeDisc(cardId)" class="btn text-white">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
